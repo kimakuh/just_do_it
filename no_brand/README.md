@@ -10,7 +10,10 @@
 * 기간
     * 2018-06-21 ~
 * 사용기술
-    *
+    * HTML
+    * CSS
+    * JAVASCRIPT
+    * BOOTSTRAP
 
 ```
 이것도 코드 블럭이다.
