@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -16,62 +16,94 @@
     <meta property="og:image:height" content="630">
     <meta property="og:description" content="UI COMPONENTS">
 
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 
-   
-       <!-- Bootstrap CSS -->
-       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-   
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+
 </head>
 
 <body>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
 
     <header>
-        <nav>
-            <div>
-                <ul class="global">
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="#">회원가입</a></li>
-                    <li><a href="#">고객센터</a></li>
-                    <li><a href="#">사이트맵</a></li>
-                </ul>
-            </div>
-            <ul>
-                <li>
-                    <a href="#">노브랜드 소개</a>
-                    <ul>
-                        <li><a href="#">노브랜드 스토리</a></li>
-                        <li><a href="#">매장 안내</a></li>
-                        <li><a href="#">매장 안내</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">창업 안내</a>
-                </li>
-                <li>
-                    <a href="#">NEWS</a>
-                </li>
-                <li>
-                    <a href="#">행사/이벤트</a>
-                </li>
-                <li>
-                    <a href="#">상품</a>
-                </li>
-                <li>
-                    <a href="#">서비스</a>
-                </li>
-            </ul>
-        </nav>
+        <h1>UI-COMPONENT</h1>
     </header>
+
+
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <div id="app-2">
+        <span v-bind:title="message">
+            내 위에 잠시 마우스를 올리면 동적으로 바인딩 된 title을 볼 수 있습니다!
+        </span>
+    </div>
+
+
+    <div id="app-3">
+        <p v-if="seen">이제 나를 볼 수 있어요</p>
+    </div>
+<script>
+    var app3 = new Vue({
+  el: '#app-3',
+  data: {
+    seen: true
+  }
+})
+</script>
     <div id="container">
-        <section></section>
+        <section>
+            <h3>Element</h3>
+
+        </section>
     </div>
     <footer></footer>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: '안녕하세요 Vue!'
+            }
+        })
+    </script>
+    <script type="text/javascript">
+        var app2 = new Vue({
+            el: '#app-2',
+            data: {
+                message: '이 페이지는 ' + new Date() + ' 에 로드 되었습니다'
+            }
+        })
+    </script>
+    <div id="app-4">
+            <ol>
+              <li v-for="todo in todos">
+                {{ todo.text }}
+              </li>
+            </ol>
+          </div>
+          <script>
+          var app4 = new Vue({
+  el: '#app-4',
+  data: {
+    todos: [
+      { text: 'JavaScript 배우기' },
+      { text: 'Vue 배우기' },
+      { text: '무언가 멋진 것을 만들기' }
+    ]
+  }
+})
+          </script>
 </body>
 
 </html>
-
-
