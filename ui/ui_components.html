@@ -54,14 +54,14 @@
     <div id="app-3">
         <p v-if="seen">이제 나를 볼 수 있어요</p>
     </div>
-<script>
-    var app3 = new Vue({
-  el: '#app-3',
-  data: {
-    seen: true
-  }
-})
-</script>
+    <script>
+        var app3 = new Vue({
+            el: '#app-3',
+            data: {
+                seen: true
+            }
+        })
+    </script>
     <div id="container">
         <section>
             <h3>Element</h3>
@@ -86,24 +86,29 @@
         })
     </script>
     <div id="app-4">
-            <ol>
-              <li v-for="todo in todos">
+        <ol>
+            <li v-for="todo in todos">
                 {{ todo.text }}
-              </li>
-            </ol>
-          </div>
-          <script>
-          var app4 = new Vue({
-  el: '#app-4',
-  data: {
-    todos: [
-      { text: 'JavaScript 배우기' },
-      { text: 'Vue 배우기' },
-      { text: '무언가 멋진 것을 만들기' }
-    ]
-  }
-})
-          </script>
+            </li>
+        </ol>
+    </div>
+    <script>
+        var app4 = new Vue({
+            el: '#app-4',
+            data: {
+                todos: [{
+                        text: 'JavaScript 배우기'
+                    },
+                    {
+                        text: 'Vue 배우기'
+                    },
+                    {
+                        text: '무언가 멋진 것을 만들기'
+                    }
+                ]
+            }
+        })
+    </script>
 </body>
 
 </html>
